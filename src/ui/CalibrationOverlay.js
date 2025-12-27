@@ -22,7 +22,7 @@ export class CalibrationOverlay {
         this.overlay.appendChild(this.message);
 
         this.instruction = document.createElement('p');
-        this.instruction.innerText = 'Show your hand to the camera to begin.';
+        this.instruction.innerText = 'Ensure your hand is visible in the preview below, then click Start.';
         this.overlay.appendChild(this.instruction);
 
         this.startButton = document.createElement('button');

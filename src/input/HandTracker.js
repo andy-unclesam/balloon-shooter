@@ -105,6 +105,6 @@ export class HandTracker {
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         // Threshold for pinch (normalized coordinates)
-        return dist < 0.05;
+        return dist < 0.1;
     }
 }

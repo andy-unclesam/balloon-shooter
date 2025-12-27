@@ -117,16 +117,24 @@ export class GameLoop {
 
         // Draw Cursor
         const cursor = this.handTracker.getCursorPosition();
+        const isPinching = this.handTracker.isPinching();
+
         if (cursor) {
-            this.ctx.strokeStyle = 'white';
-            this.ctx.lineWidth = 2;
+            this.ctx.strokeStyle = 'red';
+            this.ctx.lineWidth = 3;
             this.ctx.beginPath();
-            this.ctx.arc(cursor.x, cursor.y, 10, 0, Math.PI * 2);
-            this.ctx.moveTo(cursor.x - 15, cursor.y);
-            this.ctx.lineTo(cursor.x + 15, cursor.y);
-            this.ctx.moveTo(cursor.x, cursor.y - 15);
-            this.ctx.lineTo(cursor.x, cursor.y + 15);
+            this.ctx.arc(cursor.x, cursor.y, 15, 0, Math.PI * 2);
+            this.ctx.moveTo(cursor.x - 20, cursor.y);
+            this.ctx.lineTo(cursor.x + 20, cursor.y);
+            this.ctx.moveTo(cursor.x, cursor.y - 20);
+            this.ctx.lineTo(cursor.x, cursor.y + 20);
             this.ctx.stroke();
+
+            // Visual feedback for pinch
+            if (isPinching) {
+                this.ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
+                this.ctx.fill();
+            }
         }
 
         // Draw HUD (Handled by UIManager)
