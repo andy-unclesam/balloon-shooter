@@ -1,4 +1,4 @@
-import './style.css'
+import '../style.css'
 import { GameLoop } from './game/GameLoop.js'
 
 document.addEventListener('DOMContentLoaded', () => {
