@@ -15,6 +15,7 @@ export class CalibrationOverlay {
         this.overlay.style.zIndex = '100';
         this.overlay.style.color = 'white';
         this.overlay.style.fontFamily = 'Inter, sans-serif';
+        this.overlay.style.pointerEvents = 'auto'; // Enable clicks
 
         this.message = document.createElement('h2');
         this.message.innerText = 'Calibration Required';

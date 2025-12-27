@@ -14,6 +14,7 @@ export class SettingsDrawer {
         this.drawer.style.color = 'white';
         this.drawer.style.fontFamily = 'Inter, sans-serif';
         this.drawer.style.zIndex = '90';
+        this.drawer.style.pointerEvents = 'auto';
 
         this.createControls();
 
@@ -30,6 +31,7 @@ export class SettingsDrawer {
         this.toggleBtn.style.border = 'none';
         this.toggleBtn.style.fontSize = '24px';
         this.toggleBtn.style.cursor = 'pointer';
+        this.toggleBtn.style.pointerEvents = 'auto';
         this.toggleBtn.onclick = () => this.toggle();
         document.getElementById('ui-layer').appendChild(this.toggleBtn);
 

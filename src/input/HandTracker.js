@@ -21,7 +21,13 @@ export class HandTracker {
         this.hands.onResults(this.onResults.bind(this));
 
         this.videoElement = document.createElement('video');
-        this.videoElement.style.display = 'none';
+        this.videoElement.style.display = 'block';
+        this.videoElement.style.position = 'absolute';
+        this.videoElement.style.bottom = '10px';
+        this.videoElement.style.right = '10px';
+        this.videoElement.style.width = '160px'; // Preview size
+        this.videoElement.style.zIndex = '50';
+        this.videoElement.style.transform = 'scaleX(-1)'; // Mirror
         document.body.appendChild(this.videoElement);
 
         this.camera = new Camera(this.videoElement, {
